@@ -1,5 +1,6 @@
 package com.example.calculator.level1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
@@ -10,12 +11,24 @@ public class Calculator {
         while (true) {
             // Scanner를 통해서 양의 정수 입력받기
             System.out.print("첫 번째 숫자를 입력해주세요: ");
-            int num1 = sc.nextInt();
-            sc.nextLine();
+            int num1;
+            try {
+                num1 = sc.nextInt();
+                sc.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("숫자만 입력 가능합니다. 다시 시도해주세요.");
+                continue;
+            }
 
             System.out.print("두 번째 숫자를 입력해주세요: ");
-            int num2 = sc.nextInt();
-            sc.nextLine();
+            int num2;
+            try {
+                num2 = sc.nextInt();
+                sc.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("숫자만 입력 가능합니다. 다시 시도해주세요.");
+                continue;
+            }
 
             // 사칙연산 기호 입력받기
             System.out.print("사칙연산 기호(➕,➖,✖️,➗) 을 입력해주세요: ");
