@@ -2,6 +2,7 @@ package com.example.calculator.level3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> {
 
@@ -54,5 +55,12 @@ public class ArithmeticCalculator<T extends Number> {
             results.remove(0);
             System.out.println("가장 오래된 결과가 삭제되었습니다.");
         }
+    }
+
+    // 특정 값보다 큰 결과들을 반환 (람다 & 스트림 활용)
+    public List<Number> getGreaterResults(double threshold) {
+        return results.stream()
+                .filter(result -> result.doubleValue() > threshold)
+                .collect(Collectors.toList());
     }
 }

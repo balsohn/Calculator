@@ -45,6 +45,26 @@ public class App {
                 }
                 System.out.println("모든 결과(최대 5개): " + calculator.getResults());
                 System.out.println("-------------------");
+
+                // 특정값보다 큰 결과 조회기능
+                if (!calculator.getResults().isEmpty()) {
+                    System.out.print("특정 값보다 큰 결과를 조회하시겠습니까? (y/n): ");
+                    String command = sc.nextLine();
+
+                    if (command.equalsIgnoreCase("y")) {
+                        System.out.print("기준값을 입력해주세요: ");
+                        double threshold;
+                        try {
+                            threshold = sc.nextDouble();
+                            sc.nextLine();
+
+                            System.out.println(threshold + "보다 큰 결과: " + calculator.getGreaterResults(threshold));
+                        } catch (InputMismatchException e) {
+                            System.out.println("숫자만 입력가능합니다.");
+                            sc.nextLine();
+                        }
+                    }
+                }
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
