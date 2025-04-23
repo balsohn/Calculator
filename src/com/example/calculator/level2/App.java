@@ -40,7 +40,10 @@ public class App {
                 int result = calculator.calculate(num1, num2, operator);
                 System.out.println("계산 결과: " + result);
                 System.out.println("-------------------");
-                System.out.println("모든 결과: " + calculator.getResults());
+                if (calculator.getResults().size() > 5) {
+                    calculator.removeFristResult();
+                }
+                System.out.println("모든 결과(최대 5개): " + calculator.getResults());
                 System.out.println("-------------------");
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
