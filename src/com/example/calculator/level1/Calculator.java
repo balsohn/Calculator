@@ -13,6 +13,10 @@ public class Calculator {
         System.out.print("두 번째 숫자를 입력해주세요: ");
         int num2 = sc.nextInt();
 
+        // 사칙연산 기호 입력받기
+        System.out.print("사칙연산 기호(➕,➖,✖️,➗) 을 입력해주세요: ");
+        String operator = sc.nextLine();
+
 
     }
 }
