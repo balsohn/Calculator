@@ -39,6 +39,9 @@ public class App {
             try {
                 int result = calculator.calculate(num1, num2, operator);
                 System.out.println("계산 결과: " + result);
+                System.out.println("-------------------");
+                System.out.println("모든 결과: " + calculator.getResults());
+                System.out.println("-------------------");
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }

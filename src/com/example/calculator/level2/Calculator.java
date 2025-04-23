@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Calculator {
 
     // 연산 결과를 저장하는 컬렉션 타입 필드
-    private final List<Integer> results;
+    private List<Integer> results;
 
     // 생성자
     public Calculator() {
@@ -45,8 +45,13 @@ public class Calculator {
         return result;
     }
 
-    // getter
+    // getter (결과들을 조회하는 메서드)
     public List<Integer> getResults() {
-        return new ArrayList<>();
+        return new ArrayList<>(results);
+    }
+
+    // setter (결과값을 변경하는 메서드)
+    public void setResults(List<Integer> results) {
+        this.results = results;
     }
 }
